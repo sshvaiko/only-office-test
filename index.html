@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-((window) => {
-  window.Asc.plugin.init = () => {
-    window.Asc.plugin.executeMethod("AddToolbarMenuItem", [{
-          guid: window.Asc.plugin.guid,
-          tabs: [{
-            id: "greenometer_tab",
-            text: "Greenometer",
-            items: [{
-              id: "greenometer_button",
-              type: "button",
-              text: "Insert Text",
-              hint: "Insert Greenometer message",
-              icons: "resources/icon.png"
-            }]
-          }]
-        }])
-  }
-
-  window.Asc.plugin.button = (id) => {}
-})(window)
-  </script>
+  <meta charset="UTF-8" />
+  <title>Hello world</title>
+  <script type="text/javascript" src="https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.js"></script>
+  <script type="text/javascript" src="https://onlyoffice.github.io/sdkjs-plugins/v1/plugins-ui.js"></script>
+  <link rel="stylesheet" href="https://onlyoffice.github.io/sdkjs-plugins/v1/plugins.css">
+  <script type="text/javascript" src="scripts/helloworld.js"></script>
 </head>
-<body></body>
+<body>
+</body>
 </html>
