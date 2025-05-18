@@ -10,7 +10,7 @@
   },
   "variations": [
     {
-      "description": "My Custom Plugin1",
+      "description": "My Custom Plugin2",
       "url": "index.html",
       "icons": [
         "resources/icon.png"
