@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    window.Asc.plugin.init = function() {
+      // Add a custom tab with a button to the toolbar
+      this.executeMethod("AddToolbarMenuItem", [{
+        guid: this.guid,
+        tabs: [{
+          id: "custom_tab",
+          text: "Greenometer",
+          items: [{
+            id: "custom_button",
+            type: "button",
+            text: "Click Me",
+            hint: "This is a custom button",
+            icons: "resources/icon.png"
+          }]
+        }]
+      }]);
+    };
+
+    // Handle button click event
+    window.Asc.plugin.event_onToolbarMenuClick = function(id) {
+      if (id === "custom_button") {
+        // Perform desired action, e.g., insert text
+        this.executeMethod("InsertText", ["Hello from custom button!"]);
+      }
+    };
+  </script>
+</head>
+<body></body>
+</html>

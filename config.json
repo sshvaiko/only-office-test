@@ -1,0 +1,20 @@
+{
+  "name": "Greenometer",
+  "guid": "asc.{unique-guid}",
+  "version": "1.0",
+  "description": "Adds a custom button to the toolbar",
+  "url": "index.html",
+  "isVisual": true,
+  "editor": {
+    "word": true
+  },
+  "variations": [
+    {
+      "description": "My Custom Plugin",
+      "url": "index.html",
+      "icons": [
+        "resources/icon.png"
+      ]
+    }
+  ]
+}
