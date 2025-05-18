@@ -2,15 +2,16 @@
 <html>
 <head>
   <script>
-    window.Asc.plugin.init = function() {
-      // Add a custom tab with a button to the toolbar
-      this.executeMethod("AddToolbarMenuItem", [{
-        guid: this.guid,
+  window.Asc.plugin.init = function() {
+    // Delay to ensure toolbar is ready
+    setTimeout(() => {
+      window.Asc.plugin.executeMethod("AddToolbarMenuItem", [{
+        guid: window.Asc.plugin.guid,
         tabs: [{
-          id: "custom_tab",
+          id: "greenometer_tab",
           text: "Greenometer",
           items: [{
-            id: "custom_button",
+            id: "greenometer_button",
             type: "button",
             text: "Click Me",
             hint: "This is a custom button",
@@ -18,16 +19,15 @@
           }]
         }]
       }]);
-    };
+    }, 500);
+  };
 
-    // Handle button click event
-    window.Asc.plugin.event_onToolbarMenuClick = function(id) {
-      if (id === "custom_button") {
-        // Perform desired action, e.g., insert text
-        this.executeMethod("InsertText", ["Hello from custom button!"]);
-      }
-    };
-  </script>
+  window.Asc.plugin.event_onToolbarMenuClick = function(id) {
+    if (id === "greenometer_button") {
+      window.Asc.plugin.executeMethod("InsertText", ["Hello from Greenometer!"]);
+    }
+  };
+</script>
 </head>
 <body></body>
 </html>
