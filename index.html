@@ -2,12 +2,9 @@
 <html>
 <head>
   <script>
-    ((window) => {
-      const text = "Hello from Greenometer!"
-
-      window.Asc.plugin.init = () => {
-        // Add custom toolbar tab and button
-        window.Asc.plugin.executeMethod("AddToolbarMenuItem", [{
+((window) => {
+  window.Asc.plugin.init = () => {
+    window.Asc.plugin.executeMethod("AddToolbarMenuItem", [{
           guid: window.Asc.plugin.guid,
           tabs: [{
             id: "greenometer_tab",
@@ -21,22 +18,10 @@
             }]
           }]
         }])
-      }
+  }
 
-      window.Asc.plugin.event_onToolbarMenuClick = (id) => {
-        if (id === "greenometer_button") {
-          Asc.scope.text = text
-          window.Asc.plugin.callCommand(() => {
-            const oDocument = Api.GetDocument()
-            const oParagraph = Api.CreateParagraph()
-            oParagraph.AddText(Asc.scope.text)
-            oDocument.InsertContent([oParagraph])
-          }, true)
-        }
-      }
-
-      window.Asc.plugin.button = (id) => {}
-    })(window)
+  window.Asc.plugin.button = (id) => {}
+})(window)
   </script>
 </head>
 <body></body>
