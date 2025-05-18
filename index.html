@@ -2,32 +2,42 @@
 <html>
 <head>
   <script>
-  window.Asc.plugin.init = function() {
-    // Delay to ensure toolbar is ready
-    setTimeout(() => {
-      window.Asc.plugin.executeMethod("AddToolbarMenuItem", [{
-        guid: window.Asc.plugin.guid,
-        tabs: [{
-          id: "greenometer_tab",
-          text: "Greenometer",
-          items: [{
-            id: "greenometer_button",
-            type: "button",
-            text: "Click Me",
-            hint: "This is a custom button",
-            icons: "resources/icon.png"
-          }]
-        }]
-      }]);
-    }, 500);
-  };
+    ((window) => {
+      const text = "Hello from Greenometer!"
 
-  window.Asc.plugin.event_onToolbarMenuClick = function(id) {
-    if (id === "greenometer_button") {
-      window.Asc.plugin.executeMethod("InsertText", ["Hello from Greenometer!"]);
-    }
-  };
-</script>
+      window.Asc.plugin.init = () => {
+        // Add custom toolbar tab and button
+        window.Asc.plugin.executeMethod("AddToolbarMenuItem", [{
+          guid: window.Asc.plugin.guid,
+          tabs: [{
+            id: "greenometer_tab",
+            text: "Greenometer",
+            items: [{
+              id: "greenometer_button",
+              type: "button",
+              text: "Insert Text",
+              hint: "Insert Greenometer message",
+              icons: "resources/icon.png"
+            }]
+          }]
+        }])
+      }
+
+      window.Asc.plugin.event_onToolbarMenuClick = (id) => {
+        if (id === "greenometer_button") {
+          Asc.scope.text = text
+          window.Asc.plugin.callCommand(() => {
+            const oDocument = Api.GetDocument()
+            const oParagraph = Api.CreateParagraph()
+            oParagraph.AddText(Asc.scope.text)
+            oDocument.InsertContent([oParagraph])
+          }, true)
+        }
+      }
+
+      window.Asc.plugin.button = (id) => {}
+    })(window)
+  </script>
 </head>
 <body></body>
 </html>
