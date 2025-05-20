@@ -24,24 +24,16 @@
           }]
         }])
 
-    window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_tab", (data) => {
-      console.log("2", data)
-    })
-
     window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_co2", (data) => {
+      window.parent.postMessage("greenometer_button_co2", "*");
       console.log("greenometer_button_co2", data)
     })
+
+    window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_esrs", (data) => {
+      window.parent.postMessage("greenometer_button_esrs", "*");
+      console.log("greenometer_button_esrs", data)
+    })
   }
-
-  window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_co2", (data) => {
-      console.log("greenometer_button_co2 2222", data)
-    })
-
-  window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_tab", (data) => {
-      console.log(data)
-    })
-
-  
 
   window.Asc.plugin.button = (id) => {}
 })(window)
