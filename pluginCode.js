@@ -37,6 +37,17 @@
         type: "greenometer-data",
         payload: { foo: "bar" }
       }]);
+
+
+      window.Asc.plugin.executeMethod("ShowError", [{
+        type: "greenometer-data",
+        payload: { foo: "bar" }
+      }]);
+
+      window.Asc.plugin.executeMethod("StartAction", [{
+        type: "greenometer-data",
+        payload: { foo: "bar" }
+      }]);
       
       window.parent.postMessage(message, "*");
       console.log("greenometer_button_co2", data)
