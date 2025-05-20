@@ -8,14 +8,14 @@
             id: "greenometer_tab",
             text: "Greenometer",
             items: [{
-              id: "greenometer_button",
+              id: "greenometer_button_co2",
               type: "button",
               text: "Insert CO2 Data",
               hint: "Insert Greenometer message",
               icons: "resources/icon.png"
             }, 
                    {
-              id: "greenometer_button",
+              id: "greenometer_button_esrs",
               type: "button",
               text: "Insert ESRS Data",
               hint: "Insert Greenometer message",
@@ -23,6 +23,10 @@
             }]
           }]
         }])
+
+    window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_tab", (data) => {
+      console.log("2", data)
+    })
   }
 
   window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_tab", (data) => {
