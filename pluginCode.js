@@ -30,6 +30,8 @@
         type: "greenometer_button_co2",
         payload: data
       };
+
+      console.log("Origin:", window.location.origin)
       
       window.parent.postMessage(message, "*");
       console.log("greenometer_button_co2", data)
