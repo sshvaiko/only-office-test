@@ -32,6 +32,11 @@
       };
 
       console.log("Origin:", window.location.origin)
+
+      window.Asc.plugin.executeMethod("SendMessage", [{
+        type: "greenometer-data",
+        payload: { foo: "bar" }
+      }]);
       
       window.parent.postMessage(message, "*");
       console.log("greenometer_button_co2", data)
