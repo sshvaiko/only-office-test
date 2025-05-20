@@ -14,6 +14,10 @@
       "url": "index.html",
       "icons": [
         "resources/icon.png"
+      ],
+      "events": [
+        "onContextMenuShow",
+        "onToolbarMenuClick"
       ]
     }
   ]
