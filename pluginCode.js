@@ -25,12 +25,24 @@
         }])
 
     window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_co2", (data) => {
-      window.parent.postMessage("greenometer_button_co2", "*");
+      const message = {
+        source: "onlyoffice-plugin",
+        type: "greenometer_button_co2",
+        payload: data
+      };
+      
+      window.parent.postMessage(message, "*");
       console.log("greenometer_button_co2", data)
     })
 
     window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_esrs", (data) => {
-      window.parent.postMessage("greenometer_button_esrs", "*");
+      const message = {
+        source: "onlyoffice-plugin",
+        type: "greenometer_button_esrs",
+        payload: data
+      };
+      
+      window.parent.postMessage(message, "*");
       console.log("greenometer_button_esrs", data)
     })
   }
