@@ -33,12 +33,7 @@
 
       console.log("Origin:", window.location.origin)
 
-      window.Asc.plugin.executeMethod("ShowError", [{
-        type: "greenometer-data",
-        payload: { foo: "bar" }
-      }]);
-
-
+  
       window.Asc.plugin.executeMethod("ShowError", [{
         type: "greenometer-data",
         payload: { foo: "bar" }
