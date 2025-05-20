@@ -34,10 +34,7 @@
       console.log("Origin:", window.location.origin)
 
   
-      // window.Asc.plugin.executeMethod("ShowError", [{
-      //   type: "greenometer-data",
-      //   payload: { foo: "bar" }
-      // }]);
+      window.Asc.plugin.executeMethod("ShowError", ["Select data", 0]);
 
       window.Asc.plugin.executeMethod("StartAction", ["Block", "Save to local storage..."], function () {
           setTimeout(function () {
