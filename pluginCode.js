@@ -27,7 +27,15 @@
     window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_tab", (data) => {
       console.log("2", data)
     })
+
+    window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_co2", (data) => {
+      console.log("greenometer_button_co2", data)
+    })
   }
+
+  window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_co2", (data) => {
+      console.log("greenometer_button_co2 2222", data)
+    })
 
   window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_tab", (data) => {
       console.log(data)
