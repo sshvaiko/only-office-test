@@ -39,7 +39,11 @@
       //   payload: { foo: "bar" }
       // }]);
 
-      window.Asc.plugin.executeMethod("StartAction", [0, "test"]);
+      window.Asc.plugin.executeMethod ("StartAction", ["Block", "Save to local storage..."], function () {
+        setTimeout (function () {
+            window.Asc.plugin.executeMethod ("EndAction", ["Block", "Save to localstorage..."]);
+        }, 200););
+      });
       
       console.log("greenometer_button_co2", data)
     })
