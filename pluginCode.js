@@ -23,14 +23,16 @@
 
       const text = `{{QUESTION_${randomId}}}`;
 
-      window.Asc.scope.text = text;
+      window.Asc.plugin.executeMethod("PasteText", [text]);
+
+      // window.Asc.scope.text = text;
       
-      window.Asc.plugin.callCommand(function () {
-        const oDocument = Api.GetDocument();
-        const oParagraph = Api.CreateParagraph();
-        oParagraph.AddText(Asc.scope.text);
-        oDocument.InsertContent([oParagraph]);
-      }, true);
+      // window.Asc.plugin.callCommand(function () {
+      //   const oDocument = Api.GetDocument();
+      //   const oParagraph = Api.CreateParagraph();
+      //   oParagraph.AddText(Asc.scope.text);
+      //   oDocument.InsertContent([oParagraph]);
+      // }, true);
 
 
 
