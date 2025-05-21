@@ -4,16 +4,8 @@
   window.Asc.plugin.init = () => {
     window.Asc.plugin.executeMethod("AddToolbarMenuItem", [{
           guid: window.Asc.plugin.guid,
-          tabs: [{
-            id: "greenometer_tab",
-            text: "Greenometer",
-            items: [{
-              id: "greenometer_button_co2",
-              type: "button",
-              text: "Insert CO2 Data",
-              hint: "Insert Greenometer message",
-              icons: "resources/icon.png"
-            }, 
+          tabs: [
+            
                    {
               id: "greenometer_button_esrs",
               type: "button",
@@ -24,17 +16,17 @@
           }]
         }])
 
-    window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_co2", (data) => {
+    window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_esrs", (data) => {
       const message = {
         source: "onlyoffice-plugin",
         type: "greenometer_button_co2",
         payload: data
       };
-
-      console.log("Origin:", window.location.origin)
-
-  
+      
       window.Asc.plugin.executeMethod("ShowError", ["Select data", 0]);
+      const randomId = Math.floor(Math.random() * 1_0000_0000); // Up to 8 digits
+      const text = `{{QUESTION_${randomId}}}`;
+      window.Asc.plugin.executeMethod("InsertText", [text]);
 
       window.Asc.plugin.executeMethod("StartAction", ["Block", "Save to local storage..."], function () {
           setTimeout(function () {
@@ -43,17 +35,6 @@
       });
       
       console.log("greenometer_button_co2", data)
-    })
-
-    window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_esrs", (data) => {
-      const message = {
-        source: "onlyoffice-plugin",
-        type: "greenometer_button_esrs",
-        payload: data
-      };
-      
-      window.parent.postMessage(message, "*");
-      console.log("greenometer_button_esrs", data)
     })
   }
 
