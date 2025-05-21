@@ -17,7 +17,6 @@
 
     window.Asc.plugin.attachToolbarMenuClickEvent("greenometer_button_esrs", (data) => {
       const randomId = Math.floor(Math.random() * 1_0000_0000);
-      const text = `{{QUESTION_${randomId}}}`;
 
       const text = `{{QUESTION_${randomId}}}`;
 
