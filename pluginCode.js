@@ -25,6 +25,13 @@
 
       window.Asc.plugin.executeMethod("PasteText", [text]);
 
+
+      window.Asc.plugin.executeMethod("GetVersion");
+      window.Asc.plugin.executeMethod ("ShowButton", ["back", false, "right"]);
+      window.Asc.plugin.executeMethod ("ShowInputHelper", ["asc.{UUID}", 70, 70, true]);
+
+
+
       // window.Asc.scope.text = text;
       
       // window.Asc.plugin.callCommand(function () {
