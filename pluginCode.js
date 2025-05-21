@@ -19,7 +19,9 @@
       const randomId = Math.floor(Math.random() * 1_0000_0000);
       const text = `{{QUESTION_${randomId}}}`;
 
-      window.Asc.plugin.executeMethod("InsertText", [text]);
+      window.Asc.plugin.executeMethod("PasteText", [text]);
+
+      window.Asc.plugin.executeMethod("ShowError", ["Select data", 0]);
 
       window.Asc.plugin.executeMethod("StartAction", ["Block", "Insert ESRS Data..."], function () {
         setTimeout(function () {
