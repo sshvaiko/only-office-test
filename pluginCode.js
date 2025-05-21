@@ -19,9 +19,24 @@
       const randomId = Math.floor(Math.random() * 1_0000_0000);
       const text = `{{QUESTION_${randomId}}}`;
 
+      const text = `{{QUESTION_${randomId}}}`;
+
+      window.Asc.scope.text = text;
+      
+      window.Asc.plugin.callCommand(function () {
+        const oDocument = Api.GetDocument();
+        const oParagraph = Api.CreateParagraph();
+        oParagraph.AddText(Asc.scope.text);
+        oDocument.InsertContent([oParagraph]);
+      }, true);
+
+
+
+      
+
       window.Asc.plugin.executeMethod("ShowError", ["Select data", 0]);
 
-            window.Asc.plugin.executeMethod("PasteText", [text]);
+      //window.Asc.plugin.executeMethod("PasteText", [text]);
 
 
       console.log("Inserted:", text);
