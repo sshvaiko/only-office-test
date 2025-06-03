@@ -8,7 +8,7 @@
         items: [{
           id: "greenometer_button_esrs",
           type: "button",
-          text: "Insert ESRS Data",
+          text: "Insert Data",
           hint: "Insert Greenometer message",
           icons: "resources/icon.png"
         }]
